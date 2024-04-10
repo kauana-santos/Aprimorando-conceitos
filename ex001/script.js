@@ -1,17 +1,23 @@
-// pedir uma nota de 0 a 10;
-// mostar mensagem caso o valor seja e invalido;
-// repetir o processo até que um valor valido seja inserido.
+function carregar() {
+    var msg = document.getElementById('msg')
+    var img = document.getElementById('img')
 
-let nota = parseInt(prompt("Digite uma nota de 0 a 10"));
+    var data = new Date()
+     var hora = data.getHours()
+    var minuto = data.getMinutes()
 
-while(nota > 10 || nota < 1 || isNaN(nota)){
-    alert("Nota invalida!");
-    
-    nota = parseInt(prompt("Digite uma nota de 0 a 10"));
+    msg.innerHTML = `Agora são ${hora} horas e ${minuto} minutos!`
+
+
+    if (hora >= 0 && hora <12) {
+         img.src='./img/manha.jpg'
+        document.body.style.background = '#DDA0DD'
+    } else if (hora >=12 && hora <18) {
+        img.src = './img/tarde.jpg'
+        document.body.style.background = '#F4A460'
+    } else {
+        img.src = './img/fotonoite.jpg'
+        document.body.style.background = '#6C7B8B'
+    }
 }
-
-alert("Nota válida");
-
-
-
 
